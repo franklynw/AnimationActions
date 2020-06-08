@@ -10,6 +10,7 @@
 		795D9C10248E3EDA008D7068 /* AnimationActions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 795D9C06248E3EDA008D7068 /* AnimationActions.framework */; };
 		795D9C15248E3EDA008D7068 /* AnimationActionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795D9C14248E3EDA008D7068 /* AnimationActionsTests.swift */; };
 		795D9C17248E3EDA008D7068 /* AnimationActions.h in Headers */ = {isa = PBXBuildFile; fileRef = 795D9C09248E3EDA008D7068 /* AnimationActions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		795D9C21248E3F0D008D7068 /* AnimationActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795D9C20248E3F0D008D7068 /* AnimationActions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		795D9C0F248E3EDA008D7068 /* AnimationActionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimationActionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		795D9C14248E3EDA008D7068 /* AnimationActionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationActionsTests.swift; sourceTree = "<group>"; };
 		795D9C16248E3EDA008D7068 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		795D9C20248E3F0D008D7068 /* AnimationActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationActions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				795D9C09248E3EDA008D7068 /* AnimationActions.h */,
 				795D9C0A248E3EDA008D7068 /* Info.plist */,
+				795D9C20248E3F0D008D7068 /* AnimationActions.swift */,
 			);
 			path = AnimationActions;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					795D9C05248E3EDA008D7068 = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 					795D9C0E248E3EDA008D7068 = {
 						CreatedOnToolsVersion = 11.3;
@@ -195,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				795D9C21248E3F0D008D7068 /* AnimationActions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +345,7 @@
 		795D9C1B248E3EDA008D7068 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = BQ9A7V8X9U;
@@ -356,6 +362,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.somacreate.AnimationActions;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +371,7 @@
 		795D9C1C248E3EDA008D7068 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = BQ9A7V8X9U;
@@ -388,6 +396,7 @@
 		795D9C1E248E3EDA008D7068 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BQ9A7V8X9U;
 				INFOPLIST_FILE = AnimationActionsTests/Info.plist;
@@ -406,6 +415,7 @@
 		795D9C1F248E3EDA008D7068 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BQ9A7V8X9U;
 				INFOPLIST_FILE = AnimationActionsTests/Info.plist;
