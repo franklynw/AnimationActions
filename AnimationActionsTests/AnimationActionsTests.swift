@@ -9,26 +9,130 @@
 import XCTest
 @testable import AnimationActions
 
+import UIKit
+
 class AnimationActionsTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var animation: CABasicAnimation {
+
+        let animation = CABasicAnimation(keyPath: "opacity")
+
+        animation.fromValue = NSNumber(value: 0)
+        animation.toValue = NSNumber(value: 1)
+        animation.duration = 1
+
+        return animation
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+    func testBeganAndFinishedActions() {
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+        let animation = self.animation
+        let layer = CALayer()
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        var began = false
+        var finished = false
+
+        let beganExpectation = expectation(description: "animationBegan")
+        let finishedExpectation = expectation(description: "animationFinished")
+
+        animation.began = {
+            began = true
+            beganExpectation.fulfill()
         }
+        animation.finished = { _, _ in
+            finished = true
+            finishedExpectation.fulfill()
+        }
+
+        layer.add(animation, forKey: nil)
+
+        wait(for: [beganExpectation], timeout: 1)
+
+        XCTAssertTrue(began, "Should be true")
+
+        wait(for: [finishedExpectation], timeout: 5)
+
+        XCTAssertTrue(finished, "Should be true")
     }
 
+    func testBeganAndFinishedActionsOverrideDelegate() {
+
+        let animation = self.animation
+        let layer = CALayer()
+
+        var began = false
+        var finished = false
+
+        let beganExpectation = expectation(description: "animationBegan")
+        let finishedExpectation = expectation(description: "animationFinished")
+
+        animation.delegate = self
+
+        animation.began = {
+            began = true
+            beganExpectation.fulfill()
+        }
+        animation.finished = { _, _ in
+            finished = true
+            finishedExpectation.fulfill()
+        }
+
+        layer.add(animation, forKey: nil)
+
+        wait(for: [beganExpectation], timeout: 1)
+
+        XCTAssertTrue(began, "Should be true")
+
+        wait(for: [finishedExpectation], timeout: 5)
+
+        XCTAssertTrue(finished, "Should be true")
+    }
+
+    func testBeganAndFinishedActionsNotCalledIfDelegateSet() {
+
+        let animation = self.animation
+        let layer = CALayer()
+
+        var began = false
+        var finished = false
+
+        let beganExpectation = expectation(description: "animationBegan")
+        let finishedExpectation = expectation(description: "animationFinished")
+
+        animation.began = {
+            began = true
+            beganExpectation.fulfill()
+        }
+        animation.finished = { _, _ in
+            finished = true
+            finishedExpectation.fulfill()
+        }
+
+        animation.delegate = self
+
+        layer.add(animation, forKey: nil)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            beganExpectation.fulfill()
+            finishedExpectation.fulfill()
+        }
+
+        waitForExpectations(timeout: 5) { error in
+            XCTAssertNil(error, "Timed out")
+        }
+
+        XCTAssertFalse(began, "Should be false")
+        XCTAssertFalse(finished, "Should be false")
+    }
+}
+
+extension AnimationActionsTests: CAAnimationDelegate {
+
+    func animationDidStart(_ anim: CAAnimation) {
+        print("Animation began")
+    }
+
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        print("Animation ended")
+    }
 }
