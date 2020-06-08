@@ -11,6 +11,7 @@
 		795D9C15248E3EDA008D7068 /* AnimationActionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795D9C14248E3EDA008D7068 /* AnimationActionsTests.swift */; };
 		795D9C17248E3EDA008D7068 /* AnimationActions.h in Headers */ = {isa = PBXBuildFile; fileRef = 795D9C09248E3EDA008D7068 /* AnimationActions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		795D9C21248E3F0D008D7068 /* AnimationActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795D9C20248E3F0D008D7068 /* AnimationActions.swift */; };
+		795D9C23248E4315008D7068 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 795D9C22248E4315008D7068 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		795D9C14248E3EDA008D7068 /* AnimationActionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationActionsTests.swift; sourceTree = "<group>"; };
 		795D9C16248E3EDA008D7068 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		795D9C20248E3F0D008D7068 /* AnimationActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationActions.swift; sourceTree = "<group>"; };
+		795D9C22248E4315008D7068 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 		795D9BFC248E3EDA008D7068 = {
 			isa = PBXGroup;
 			children = (
+				795D9C22248E4315008D7068 /* README.md */,
 				795D9C08248E3EDA008D7068 /* AnimationActions */,
 				795D9C13248E3EDA008D7068 /* AnimationActionsTests */,
 				795D9C07248E3EDA008D7068 /* Products */,
@@ -182,6 +185,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				795D9C23248E4315008D7068 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +277,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -330,7 +334,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -354,6 +358,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = AnimationActions/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,6 +385,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = AnimationActions/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
